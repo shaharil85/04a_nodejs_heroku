@@ -1,18 +1,7 @@
 let app = require('express')();
 let server = require('http').createServer(app);
-//let io = require('socket.io')(server);
-const io = require("socket.io")(server, {
-    cors: {
-        // origin: "https://localhost:8100/home",
-        // methods: ["GET", "POST"],
-        //allowedHeaders: ["my-custom-header"],
-        //credentials: true,
-        //origin: "http://localhost:8100",
-        //methods: ["GET", "POST"]
-        
-    }
-    
-});
+let io = require('socket.io')(server);
+
   
 app.get('/', (req, res) => {
     res.status(200).send('Hello Yeah!!');
